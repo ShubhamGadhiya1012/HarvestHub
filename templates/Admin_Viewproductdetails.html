@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarvestHUB</title>
+    <link href="/static/img/logo.png" rel="icon">
+
+    <meta name="author" content="Codeconvey" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900');
+
+
+
+    html {
+        box-sizing: border-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }
+
+    article,
+    header,
+    section,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    main,
+    nav,
+    section,
+    summary {
+        display: block;
+    }
+
+    body {
+        color: #222;
+        font-size: 100%;
+        line-height: 24px;
+        margin: 0;
+        padding: 0;
+        font-family: "Raleway", sans-serif;
+    }
+
+    a {
+        font-family: "Raleway", sans-serif;
+        text-decoration: none;
+        outline: none;
+    }
+
+    a:hover,
+    a:focus {
+        color: #373e18;
+    }
+
+    section {
+        float: left;
+        width: 100%;
+        padding-bottom: 3em;
+    }
+
+    h2 {
+        color: #1a0e0e;
+        font-size: 26px;
+        font-weight: 700;
+        margin: 0;
+        line-height: normal;
+        text-transform: uppercase;
+    }
+
+    h2 span {
+        display: block;
+        padding: 0;
+        font-size: 18px;
+        opacity: 0.7;
+        margin-top: 5px;
+        text-transform: uppercase;
+    }
+
+    #float-right {
+        float: right;
+    }
+
+
+    .ScriptTop {
+        background: #fff none repeat scroll 0 0;
+        float: left;
+        font-size: 0.69em;
+        font-weight: 600;
+        line-height: 2.2;
+        padding: 12px 0;
+        text-transform: uppercase;
+        width: 100%;
+    }
+
+    /* To Navigation Style 1*/
+    .ScriptTop ul {
+        margin: 24px 0;
+        padding: 0;
+        text-align: left;
+    }
+
+    .ScriptTop li {
+        list-style: none;
+        display: inline-block;
+    }
+
+    .ScriptTop li a {
+        background: #6a4aed none repeat scroll 0 0;
+        color: #fff;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 5px 18px;
+        text-decoration: none;
+        text-transform: capitalize;
+    }
+
+    .ScriptTop li a:hover {
+        background: #000;
+        color: #fff;
+    }
+
+
+
+
+    .ScriptHeader {
+        float: left;
+        width: 100%;
+        padding: 2em 0;
+    }
+
+    .rt-heading {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .Scriptcontent {
+        line-height: 28px;
+    }
+
+    .ScriptHeader h1 {
+        font-family: "brandon-grotesque", "Brandon Grotesque", "Source Sans Pro", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        color: #6a4aed;
+        font-size: 26px;
+        font-weight: 700;
+        margin: 0;
+        line-height: normal;
+
+    }
+
+    .ScriptHeader h2 {
+        color: #312c8f;
+        font-size: 20px;
+        font-weight: 400;
+        margin: 5px 0 0;
+        line-height: normal;
+
+    }
+
+    .ScriptHeader h1 span {
+        display: block;
+        padding: 0;
+        font-size: 22px;
+        opacity: 0.7;
+        margin-top: 5px;
+
+    }
+
+    .ScriptHeader span {
+        display: block;
+        padding: 0;
+        font-size: 22px;
+        opacity: 0.7;
+        margin-top: 5px;
+    }
+
+
+
+    .rt-container {
+        margin: 0 auto;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .rt-row:before,
+    .rt-row:after {
+        display: table;
+        line-height: 0;
+        content: "";
+    }
+
+    .rt-row:after {
+        clear: both;
+    }
+
+    [class^="col-rt-"] {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        padding: 0 15px;
+        min-height: 1px;
+        position: relative;
+    }
+
+
+    @media (min-width: 768px) {
+        .rt-container {
+            width: 750px;
+        }
+
+        [class^="col-rt-"] {
+            float: left;
+            width: 49.9999999999%;
+        }
+
+        .col-rt-6,
+        .col-rt-12 {
+            width: 100%;
+        }
+
+    }
+
+    @media (min-width: 1200px) {
+        .rt-container {
+            width: 1170px;
+        }
+
+        .col-rt-1 {
+            width: 16.6%;
+        }
+
+        .col-rt-2 {
+            width: 30.33%;
+        }
+
+        .col-rt-3 {
+            width: 50%;
+        }
+
+        .col-rt-4 {
+            width: 67.664%;
+        }
+
+        .col-rt-5 {
+            width: 83.33%;
+        }
+
+
+    }
+
+    @media only screen and (min-width:240px) and (max-width: 768px) {
+
+        .ScriptTop h1,
+        .ScriptTop ul {
+            text-align: center;
+        }
+
+        .ScriptTop h1 {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .ScriptTop ul {
+            margin-top: 12px;
+        }
+
+        .ScriptHeader h1,
+        .ScriptHeader h2,
+        .scriptnav ul {
+            text-align: center;
+        }
+
+        .scriptnav ul {
+            margin-top: 12px;
+        }
+
+        #float-right {
+            float: none;
+        }
+
+    }
+    .view-image-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.view-image-btn:hover {
+    background-color: #45a049; 
+}
+
+
+
+.status-icon {
+    border: none;
+    border-radius: 20px 10px;
+    padding: 1px 15px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    cursor: default; 
+    user-select: none; 
+    background-color: #4CAF50; 
+  }
+  
+  .success-icon {
+      background-color: green;
+  }
+  
+  .pending-icon {
+      background-color: orange;
+  }
+  
+  .fail-icon {
+      background-color: red;
+  }
+  
+  .paybtn{
+
+    background-color: rgb(0, 204, 255);
+    width: 60px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    
+  }
+</style>
+
+<body>
+
+    <div class="ScriptTop">
+        <div class="rt-container">
+            <div class="col-rt-4" id="float-right">
+
+                <!-- Ad Here -->
+
+            </div>
+
+        </div>
+    </div>
+
+    <br><br>
+    <section>
+        <div class="rt-container">
+            <div class="col-rt-12">
+                <div class="Scriptcontent">
+
+                    <!-- Student Profile -->
+                    <div class="student-profile py-4">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="card shadow-sm">
+                                        <div class="card-header bg-transparent text-center">
+                                            <!-- <img class="profile_img" src="{{ fd.image.url }}" alt="{{ fd.first_name }}'s Profile Image" height="200px" width="200px" style="border-radius: 100px;" alt="student dp"> -->
+                                            <!-- <br><br> -->
+                                            <h3><b>{{fd.first_name}} {{fd.last_name}} </b></h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="mb-0"><strong class="pr-1">Order Id :</strong>{{fd.order_id}}</p>
+                                            <p class="mb-0"><strong class="pr-1">Order date :</strong>{{fd.order_date}}
+                                            </p>
+
+                                            <p class="mb-0"><strong class="pr-1">Email :</strong>{{fd.email}}</p>
+                                            <p class="mb-0"><strong class="pr-1">Contact :</strong>{{fd.phone}}</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="card shadow-sm">
+                                        <div class="card-header bg-transparent border-0">
+                                            <h3 class="mb-0"><i class="fa-solid fa-bag-shopping"></i> Product Information</h3>
+                                        </div>
+                                        <div class="card-body pt-0">
+                                            <table class="table table-bordered">
+                                                <tr>
+                                                    <th width="30%">Product Name</th>
+                                                    <td width="2%">:</td>
+                                                    <td>{{fd.product_name}}</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th width="30%">Product Description</th>
+                                                    <td width="2%">:</td>
+                                                    <td>{{fd.product_desc}}</td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <th width="30%">Product image</th>
+                                                    <td width="2%">:</td>
+                                                    <td style="text-align: center;">
+                                                        <!-- View Image Button with CSS Class -->
+                                                        <button class="view-image-btn" onclick="viewImage('{{ fd.product_image.url }}')">
+                                                            View Image
+                                                        </button>
+                                                    
+                                                        <script>
+                                                            function viewImage(url) {
+                                                                window.open(url, '_blank');  
+                                                            }
+                                                        </script>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th width="30%">Certificate of Organic Product</th>
+                                                    <td width="2%">:</td>
+                                                    <td style="text-align: center;">
+                                                        <button class="view-image-btn" onclick="viewImage('{{ fd.certificate.url }}')">
+                                                            View Certificate
+                                                        </button>
+                                                        <script>
+                                                            function viewImage(url) {
+                                                                window.open(url, '_blank'); 
+                                                            }
+                                                        </script>
+                                                    </td>
+                                                </tr>
+
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <br>
+
+
+                                    
+                                </div>
+                            </div>
+
+                            <div class="card shadow-sm" style="width : auto;">
+                                <div class="card-header bg-transparent border-0">
+                                    <h3 class="mb-0"><i class="fa-solid fa-indian-rupee-sign"></i> Amount of Order</h3>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <table class="table table-bordered">
+                                        <tr>
+                                            <th>Order Id</th>
+                                            <th>Product Name</th>
+                                            <th>Quantity (KG)</th>
+                                            <th>Price (per KG)</th>
+                                            <th>Total Amount</th>
+                                            <th>Payment Status</th>
+                                            <th>Pay here</th>
+                                            <!-- <th>Add Profit</th> -->
+
+                                        </tr>
+
+                                        <tr>
+                                            <td>{{ fd.order_id }}</td>
+
+                                            <td>{{fd.product_name}}</td>
+                                            <td>{{fd.quantity}}</td>
+                                            <td>{{fd.price }} </td>
+                                             <td>₹ {{ tm }} </td>  
+                                            <td> {% if fd.payment == 'Success' %}
+                                                <button class="status-icon success-icon" disabled>Success</button>
+                                            {% elif fd.payment == 'Fail' %}
+                                                <button class="status-icon fail-icon" disabled>Failed</button>
+                                            {% elif fd.payment == 'Pending' %}
+                                                <button class="status-icon pending-icon" disabled>Pending</button>
+                                            {% else %}
+                                                <span class="status-icon"></span> Unknown
+                                            {% endif %}</td>
+                      
+                                            <td> {% if fd.payment == 'Success' %}
+                                              <i class="fas fa-check fa-2x mr-2" style="color: green; font-size: 1.2rem;"></i>
+                                          <!-- {% elif fd.payment == 'Fail' %}
+                                          <a  href="{% url 'adminviewproductdetails' data.id %}"> <button type="button" class="paybtn">Pay</button></a> -->
+                                          {% elif fd.payment == 'Pending' %}
+                                         
+                                          <form action="{% url 'admincreate_order' fd.id %}" method="POST">
+                                            {% csrf_token %}
+                                            <button type="submit" class="paybtn">Pay</button>
+                                        </form>
+
+                                          {% else %}
+                                              <span class="status-icon"></span> Unknown
+                                          {% endif %}</td>
+                                           
+                                          <!-- <td>add profit </td> -->
+
+                                        </tr>
+
+
+                                      
+                                    </table>
+                                </div>
+                            </div>
+
+                          
+
+                        </div>
+
+                    </div>
+                    <!-- partial -->
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Analytics -->
+
+</body>
+
+</html>

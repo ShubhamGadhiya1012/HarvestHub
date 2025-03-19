@@ -1,0 +1,243 @@
+'
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal Form</title>
+    <style type="text/css" media="all">
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .proposal-form {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: #2f2f2f;
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .header p {
+            margin: 10px 0;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .section {
+            margin-top: 30px;
+        }
+
+        .section h2 {
+            padding: 15px;
+            margin: 0;
+            font-size: 22px;
+            border-radius: 6px;
+            border-bottom: 3px solid #2f2f2f;
+            color: #ffffff;
+        }
+
+        .policy-details h2 {
+            background-color: #2f2f2f;
+        }
+
+        .bike-owner-details h2 {
+            background-color: #2f2f2f;
+        }
+
+        .bike-details h2 {
+            background-color: #2f2f2f;
+        }
+
+        .premium-receipt h2 {
+            background-color: #2f2f2f;
+        }
+
+        .idv {
+            margin-top: 200px;
+        }
+
+        .idv h2 {
+            background-color: #2f2f2f;
+        }
+
+        .plan-coverages h2 {
+            background-color: #2a9d8f;
+            /* Green color */
+            color: #ffffff;
+        }
+
+        .whats-not-covered {
+            margin-top: 380px;
+        }
+
+        .whats-not-covered h2 {
+            background-color: #e63946;
+            /* Red color */
+            color: #ffffff;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        table th,
+        table td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #2f2f2f;
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        table td {
+            background-color: #fafafa;
+            font-size: 15px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 3px solid #2f2f2f;
+            text-align: center;
+            font-size: 14px;
+            color: #2f2f2f;
+        }
+
+        .qr {
+            width: 90px;
+            height: 90px;
+        }
+
+        .div_qr {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            height: 100px;
+        }
+
+        .logo {
+            width: 400px;
+            height: 200px;
+        }
+
+        .signture {
+            width: 90%;
+            height: 100px;
+            display: flex;
+            align-items: end;
+        }
+    </style>
+</head>
+{% load static %}
+
+<body>
+    <div class="proposal-form">
+        <div class="header">
+
+            <div class="div_qr">
+                <img class="qr" src="/static/img/adminback.jpg" alt="Company Logo">
+            </div>
+            <br>
+            <p style="text-align: center; font-size:13px; margin-top:-20px">GST No: 12345xxx097 <br>Contact No: +91
+                9898457047 |
+                Email : harvethub@gmail.com <br> Address : F-801 Shivalik Shilp, Near Isckon temple ,SG
+                Highway,Ahmedabad-380055 <br></p>
+            <br>
+            <h1 style="margin-top:10px;">Invoice</h1>
+            <br>
+            <div style="display: flex; flex-direction: column; width: 100%;">
+                <div style="display: flex; justify-content: space-between; width: 100%;">
+                    <p style="margin: 0;"><b>Name :</b> Shubham</p>
+                    <div style="text-align: left; margin: 0; min-width: 150px;">
+                        <p style="margin: 0;"><b>Order ID :</b> 1035</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; width: 100%;">
+                    <p style="margin: 0;"><b>Email :</b> Shubha@</p>
+                    <div style="text-align: left; margin: 0; min-width: 150px;">
+                        <p style="margin: 0;"><b>Time :</b> 10:35</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; width: 100%;">
+                    <p style="margin: 0;"><b>Phone :</b> 989826284</p>
+                    <div style="text-align: left; margin: 0; min-width: 150px;">
+                        <p style="margin: 0;"><b>Date :</b> 10/67/8654</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <div class="section plan-coverages">
+                <h2>Order Details</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Product Name</th>
+                            <th>Quantity (KG)</th>
+                            <th>Price (per KG)</th>
+                            <th>Total Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>'''+policyNumber+'''</td>
+                            <td>'''+plan+'''</td>
+                            <td>'''+str((int(plan_price)*18)/100)+'''</td>
+                            <td>'''+final_amt+'''</td>
+                            <td>'''+str(data.timestamp)+'''</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <div style="text-align: left;">
+                    <p>Payable Amount : 131333 <br> Payment Id : 131<br>Payment Method : Rezorpay<br></p>
+
+                </div>
+            </div>
+        </div>
+
+
+
+</body>
+
+</html>

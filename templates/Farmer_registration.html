@@ -1,0 +1,422 @@
+<!-- Updated multi_step_form.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarvestHUB</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+          
+            min-height: 100vh;
+  display: flex;
+  background: linear-gradient(rgba(20, 20, 20, .5), rgba(20, 20, 20, .5)), url("/static/img/farmerlogin.jpg");
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-position: center; 
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-bar {
+            display: flex;
+            margin-bottom: 30px;
+        }
+
+        .step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            background-color: #d1d1d1;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+        }
+
+        .step.active .step-number {
+            background-color: #45a049;
+        }
+
+        .step-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .step-desc {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .step-content {
+            display: none;
+        }
+
+        .step-content.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background-color: #45a049;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .terms-text {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .custom-alert {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .custom-alert-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 300px;
+        }
+
+        .custom-alert-content span {
+            display: block;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .custom-alert-content button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #45a049;
+            color: #fff;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <br><br><br><br><br><br><br>
+    <div class="container">
+        <div class="form-container">
+            <div class="progress-bar">
+                <div class="step" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Create account</div>
+                    <div class="step-desc"></div>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Personal Details</div>
+                    <div class="step-desc"></div>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Terams and Conditions</div>
+                    <div class="step-desc"></div>
+                </div>
+            </div>
+            <form id="multi-step-form" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="step-content" id="step1">
+                    <h2>Create new  account</h2>
+                    <div class="form-group">
+                        <label for="id_personal-email">Email</label>
+                        <input type="email" id="id_personal-email" value="{{ request.session.femail }}" name="personal-email" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_personal-phone">Phone Number</label>
+                        <input type="tel" id="id_personal-phone" name="personal-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_personal-password">Password</label>
+                        <input type="password" id="id_personal-password" name="personal-password" required>
+                    </div>
+                </div>
+                <div class="step-content" id="step2">
+                    <h2>Personal Details</h2>
+                    <div class="form-group">
+                        <label for="id_contact-first_name">First Name</label>
+                        <input type="text" id="id_contact-first_name" name="contact-first_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_contact-last_name">Last Name</label>
+                        <input type="text" id="id_contact-last_name" name="contact-last_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_contact-age">Age</label>
+                        <input type="number" id="id_contact-age" name="contact-age" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_contact-gender">Gender</label>
+                        <select id="id_contact-gender" name="contact-gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_contact-address">Address</label>
+                        <input type="text" id="id_contact-address" name="contact-address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_contact-city">City</label>
+                        <input type="text" id="id_contact-city" name="contact-city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_contact-state">State</label>
+                        <select id="id_contact-state" name="contact-state" required>
+                            <option value="" selected disabled>Select a state</option>
+                            <option value="AN">Andaman and Nicobar Islands</option>
+                            <option value="AP">Andhra Pradesh</option>
+                            <option value="AR">Arunachal Pradesh</option>
+                            <option value="AS">Assam</option>
+                            <option value="BR">Bihar</option>
+                            <option value="CH">Chandigarh</option>
+                            <option value="CT">Chhattisgarh</option>
+                            <option value="DN">Dadra and Nagar Haveli</option>
+                            <option value="DD">Daman and Diu</option>
+                            <option value="DL">Delhi</option>
+                            <option value="GA">Goa</option>
+                            <option value="GJ">Gujarat</option>
+                            <option value="HR">Haryana</option>
+                            <option value="HP">Himachal Pradesh</option>
+                            <option value="JK">Jammu and Kashmir</option>
+                            <option value="JH">Jharkhand</option>
+                            <option value="KA">Karnataka</option>
+                            <option value="KL">Kerala</option>
+                            <option value="LA">Ladakh</option>
+                            <option value="LD">Lakshadweep</option>
+                            <option value="MP">Madhya Pradesh</option>
+                            <option value="MH">Maharashtra</option>
+                            <option value="MN">Manipur</option>
+                            <option value="ML">Meghalaya</option>
+                            <option value="MZ">Mizoram</option>
+                            <option value="NL">Nagaland</option>
+                            <option value="OR">Odisha</option>
+                            <option value="PY">Puducherry</option>
+                            <option value="PB">Punjab</option>
+                            <option value="RJ">Rajasthan</option>
+                            <option value="SK">Sikkim</option>
+                            <option value="TN">Tamil Nadu</option>
+                            <option value="TG">Telangana</option>
+                            <option value="TR">Tripura</option>
+                            <option value="UP">Uttar Pradesh</option>
+                            <option value="UT">Uttarakhand</option>
+                            <option value="WB">West Bengal</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_contact-zipcode">Zip Code</label>
+                        <input type="text" id="id_contact-zipcode" name="contact-zipcode" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_contact-country">Country</label>
+                        <input type="text" id="id_contact-country" name="contact-country" value="India" readonly>
+                    </div>
+
+
+                   
+                    <div class="form-group">
+                        <label for="id_contact-image">Upload Image</label>
+                        <input type="file" id="id_contact-image" name="contact-image" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_contact-land_certificate">Upload Agriculture Land Certificate</label>
+                        <input type="file" id="id_contact-land_certificate" name="contact-land_certificate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_contact-adhar_card">Upload Aadhar Card Image</label>
+                        <input type="file" id="id_contact-adhar_card" name="contact-adhar_card" required>
+                    </div>
+                </div>
+                <div class="step-content" id="step3">
+                    <h2>Terms and Conditions</h2>
+                    <p>Please read and accept the following terms and conditions:</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+                        Duis vehicula ligula sit amet risus cursus, sed ultricies metus pellentesque. Praesent sit amet
+                        viverra purus, et iaculis nunc. Donec lacinia nisl nec orci elementum, a posuere libero feugiat.
+                        Integer vel libero vitae nulla tempus fermentum ut sit amet sapien.</p>
+                    <p>Fusce vitae metus euismod, pellentesque metus vel, consequat metus. Suspendisse potenti. In non
+                        laoreet eros, sit amet aliquet elit. Vivamus vel lacus vitae nisi gravida euismod. Donec id urna
+                        a odio tristique vulputate sit amet et felis. Vestibulum euismod gravida erat, eget fringilla
+                        nisl sagittis ut.</p>
+                    <p>Curabitur vitae elit quis est malesuada tristique non ac mi. Aliquam erat volutpat. Mauris
+                        ultricies dolor id eros lacinia, eget fermentum magna vestibulum. Nam consectetur risus eu leo
+                        pretium vehicula.</p>
+                    <p>Pellentesque ut magna eget velit rhoncus luctus. Fusce lacinia, nulla ac rhoncus dictum, nisi
+                        nisl aliquet purus, vel hendrerit eros nunc nec velit.</p>
+                    <p>Nam volutpat vitae lacus eget volutpat. Vivamus interdum justo at augue efficitur tincidunt. Cras
+                        ac odio et erat ultricies sagittis sit amet non erat. Sed non elit nec sapien bibendum
+                        venenatis.</p>
+                        <div class="form-group checkbox-group" style="width: 20px; ">
+                            <input type="checkbox" id="id_security-terms_accepted" name="security-terms_accepted" required>
+                            <label for="id_security-terms_accepted" class="terms-text" style="width: auto; text-wrap: nowrap; color: red;"><b>I agree to the Terms and
+                                    Conditions</b></label>
+                        </div>
+                </div>
+              
+                <div class="form-navigation">
+                    <button type="button" id="prevBtn" class="btn btn-secondary">Back</button>
+                    <button type="button" id="nextBtn" class="btn btn-primary">Next Step</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="customAlert" class="custom-alert">
+        <div class="custom-alert-content">
+            <span id="customAlertMessage"></span>
+            <button id="customAlertCloseBtn" class="btn btn-primary">OK</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('multi-step-form');
+            const steps = Array.from(document.querySelectorAll('.step-content'));
+            const progressSteps = Array.from(document.querySelectorAll('.step'));
+            const nextBtn = document.getElementById('nextBtn');
+            const prevBtn = document.getElementById('prevBtn');
+            const customAlert = document.getElementById('customAlert');
+            const customAlertMessage = document.getElementById('customAlertMessage');
+            const customAlertCloseBtn = document.getElementById('customAlertCloseBtn');
+            let currentStep = 0;
+
+            steps[currentStep].classList.add('active');
+            progressSteps[currentStep].classList.add('active');
+
+            nextBtn.addEventListener('click', () => {
+                if (!validateStep(currentStep)) return;
+                if (currentStep < steps.length - 1) {
+                    steps[currentStep].classList.remove('active');
+                    progressSteps[currentStep].classList.remove('active');
+                    currentStep++;
+                    steps[currentStep].classList.add('active');
+                    progressSteps[currentStep].classList.add('active');
+                    if (currentStep === steps.length - 1) {
+                        nextBtn.textContent = 'Submit';
+                    }
+                } else {
+                    form.submit();
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentStep > 0) {
+                    steps[currentStep].classList.remove('active');
+                    progressSteps[currentStep].classList.remove('active');
+                    currentStep--;
+                    steps[currentStep].classList.add('active');
+                    progressSteps[currentStep].classList.add('active');
+                    nextBtn.textContent = 'Next Step';
+                }
+            });
+
+            customAlertCloseBtn.addEventListener('click', () => {
+                customAlert.style.display = 'none';
+            });
+
+            function validateStep(step) {
+                const stepContent = steps[step];
+                const inputs = Array.from(stepContent.querySelectorAll('input, select'));
+                for (const input of inputs) {
+                    if (!input.checkValidity()) {
+                        showAlert(input.validationMessage);
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            function showAlert(message) {
+                customAlertMessage.textContent = message;
+                customAlert.style.display = 'flex';
+            }
+        });
+    </script>
+</body>
+
+</html>

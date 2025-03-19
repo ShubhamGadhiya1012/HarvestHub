@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>HarvestHUB</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/img/logo.png" rel="icon">
+  <link href="/static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Marcellus:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="/static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="/static/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: AgriCulture
+  * Template URL: https://bootstrapmade.com/agriculture-bootstrap-website-template/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+}
+
+.container1 {
+    width: 400px;
+    height: 450px; /* Fixed height for the card */
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures proper spacing between elements */
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: 200px; /* Set fixed height for the image */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+.price {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #2a722d;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.tour-info {
+    padding: 10px 20px;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+h2 {
+    color: #2a722d;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+h3 {
+    color: #2a722d;
+    margin-bottom: 10px;
+    /* font-weight: bold; */
+}
+
+h4 {
+    margin-top: 0;
+    font-size: 18px;
+    white-space: normal; /* Allows wrapping */
+    overflow-wrap: break-word; /* Breaks long words */
+}
+
+h6 {
+    font-size: 14px;
+    white-space: normal; /* Allows wrapping */
+    overflow-wrap: break-word; /* Handles long words gracefully */
+    flex-grow: 1; /* Allows the description to expand */
+    margin-bottom: 10px;
+}
+
+.btn1 {
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    background-color: #2a722d;
+    color: #fff;
+    font-size: 15px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    margin: 10px auto 0;
+    line-height: 40px;
+    text-align: center;
+}
+
+.btn1 a {
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+
+.container1 .tour-info {
+    height: 200px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto; 
+}
+
+/* Customize scrollbar in card */
+.container1 .tour-info::-webkit-scrollbar {
+    width: 3px; 
+}
+
+.container1 .tour-info::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 100px;
+}
+
+.container1 .tour-info::-webkit-scrollbar-track {
+    background-color: #f5f5f5; 
+}
+
+.container1 .tour-info::-webkit-scrollbar-thumb:hover {
+    background-color: #1e5a1f; 
+}
+
+
+/* .container1 .tour-info {
+    scrollbar-width: none;
+    -ms-overflow-style: none;  
+}
+
+.container1 .tour-info::-webkit-scrollbar {
+    display: none;
+} */
+
+
+
+  </style>
+  
+<body class="contact-page">
+
+  <!-- <script>
+    document.querySelectorAll('.container1 .tour-info').forEach(function(card) {
+        card.addEventListener('scroll', function() {
+            card.style.scrollbarWidth = 'thin';  // For Firefox
+            card.style.setProperty('--webkit-scrollbar-display', 'initial'); // For Chrome, Safari, Opera
+            
+            // Hide the scrollbar after 1 second of no scroll
+            clearTimeout(card.hideScrollTimeout);
+            card.hideScrollTimeout = setTimeout(function() {
+                card.style.scrollbarWidth = 'none';  // Firefox
+                card.style.setProperty('--webkit-scrollbar-display', 'none'); // Chrome, Safari, Opera
+            }, 1000);
+        });
+    });
+    </script> -->
+    
+
+  <header id="header" class="header d-flex align-items-center position-relative">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        
+        <img src="/static/img/logo2.png" alt="AgriCulture" height="44px" >
+     
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About Us</a></li>
+          <li class="dropdown"><a href="{% url 'services' %} " class="active"><span>Our Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="{% url 'harvestcart' %}">Harvest cart</a></li>
+              <li><a href="{% url 'harvestmandi' %}">Harvest Mandi</a></li>
+              <li><a href="{% url 'harvestkirana' %}">Harvest Kirana</a></li>
+              <li><a href="{% url 'harvestglobal' %}">Harvest Global</a></li>
+            </ul>
+          </li>
+        
+          <li><a href="{% url 'contact' %}" >Contact</a></li>
+          <li>
+            <a href="{% url 'login' %}">
+                Logout <i class="bi bi-box-arrow-right" style="color: green;"></i>
+            </a>
+        </li>
+       
+          <li style="margin-left:auto;">
+            <a href="{% url 'userprofile' %}">
+                <i class="bi bi-person-circle" style="font-size: 2.5rem; color: green;"></i>
+            </a>
+        </li>
+    </ul>
+    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url(/static/img/page-title-bg.webp);">
+      <div class="container position-relative">
+        <h1>Harvest Cart</h1>
+        <p>
+          Home
+          /
+          Harvest Cart
+        </p>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li class="current">Harvest Cart</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+
+
+
+
+    <div class="row">
+      {% with counter=0 %}
+          {% for farmer_product in farmer_products %}
+              {% if farmer_product.quantity >= 10 %}
+                  {% with counter=counter|add:1 %}
+                  <div class="col-md-4">
+                      <br />
+                      <div class="container1">
+                          <img src="{{ farmer_product.product_image.url }}" alt="{{ farmer_product.product_name }}">
+                          <div class="tour-info">
+                              <h4>Price per KG</h4>
+                              <h2>{{ farmer_product.product_name }}</h2>
+                              <h6>➤ {{ farmer_product.product_desc|truncatewords:150 }} </h6>
+                              <div>
+                                  <h3> ₹ {{ farmer_product.price }}/-</h3>
+                                  <button class="btn1">
+                                      <a href="{% url 'orderbooking' farmer_product.id %}">Buy Now</a>
+                                  </button>
+                              </div>
+                          </div>
+                      </div>
+                      <br /><br />
+                  </div>
+  
+                  <!-- Close and open a new row after every 3 products -->
+                  {% if counter|divisibleby:3 %}
+                      </div><div class="row">
+                  {% endif %}
+                  {% endwith %}
+              {% endif %}
+          {% endfor %}
+      {% endwith %}
+  </div>
+  
+  
+
+
+
+  </main>
+
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="{% url 'home' %}" class="logo d-flex align-items-center">
+              <span class="sitename">HarvestHUB</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>A108 Time Square</p>
+              <p>Thaltej, Ahmedabad 380052</p>
+              <p class="mt-3"><strong>Phone:</strong> <span>+91 6389554855</span></p>
+              <p><strong>Email:</strong> <span>harvesthub143@yahoo.com</span></p>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="{% url 'home' %}">Home</a></li>
+              <li><a href="{% url 'about' %}">About us</a></li>
+              <li><a href="{% url 'services' %}">Services</a></li>
+              <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="#">Harvest Cart</a></li>
+              <li><a href="#">Harvest Mandi</a></li>
+              <li><a href="#">Harvest Kirana</a></li>
+              <li><a href="#">Harvest Global</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Our Branches</h4>
+            <ul>
+              <li><a href="#">Ahmedabad</a></li>
+              <li><a href="#">Surat</a></li>
+              <li><a href="#">Mumbai</a></li>
+              <li><a href="#">Benglore</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Terms & Conditions</h4>
+            <ul>
+              <p>In order to avail the Services from Ninjacart, you will need to provide Registration Data prior to getting registered</p>
+             
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright text-center">
+      <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+
+        <div class="d-flex flex-column align-items-center align-items-lg-start">
+          <div>
+            © Copyright <strong><span>HarvestHUB</span></strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
+            Designed by <a href="https://bootstrapmade.com/">HarvestHUB</a>
+          </div>
+        </div>
+
+        <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
+          <a href=""><i class="bi bi-twitter-x"></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="/static/vendor/php-email-form/validate.js"></script> -->
+  <script src="/static/vendor/aos/aos.js"></script>
+  <script src="/static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/static/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="/static/js/main.js"></script>
+
+</body>
+
+</html>

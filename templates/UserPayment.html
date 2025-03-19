@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/static/img/logo.png">
+    <title>
+      HarvestHUB
+    </title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+  
+    <form id="razorpay-form" action="{% url 'userpayment_success' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="razorpay_order_id" value="{{ razorpay_order_id }}">
+        <input type="hidden" name="amount" value="{{ amount }}">
+        <input type="hidden" name="currency" value="{{ currency }}">
+        <input type="hidden" name="razorpay_payment_id" id="razorpay_payment_id">
+    </form>
+    
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        var options = {
+            "key": "{{ razorpay_merchant_key }}",  // Razorpay Merchant Key
+            "amount": "{{ amount }}",  // Amount in paise, passed from the backend
+            "currency": "{{ currency }}",  // Currency, passed from the backend
+            "name": "HarvestHUB",  // Your company or product name
+            "order_id": "{{ razorpay_order_id }}",  // Razorpay Order ID
+            "handler": function (response){
+                // Set the payment ID in the hidden form field
+                document.getElementById('razorpay_payment_id').value = response.razorpay_payment_id;
+    
+                // Submit the form after the payment is successful
+                document.getElementById('razorpay-form').submit();
+            },
+            "theme": {
+                "color": "#3399cc"  // Customize theme color
+            }
+        };
+    
+        var rzp1 = new Razorpay(options);
+    
+        // Open the Razorpay checkout on page load
+        rzp1.open();
+    </script>
+    
+</body>
+</html>

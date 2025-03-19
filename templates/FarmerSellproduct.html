@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <meta name="description" content="Responsive Bootstrap 4 Dashboard Template">
+    <meta name="author" content="BootstrapDash">
+
+    <title>HarvestHUB</title>
+    <link href="/static/img/logo.png" rel="icon">
+    
+
+    {% load static %}
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <!-- Nucleo Icons -->
+    <link href="/static/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="/static/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link href="/static/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link id="pagestyle" href="/static/css/soft-ui-dashboard.css?v=1.0.7" rel="stylesheet" />
+    <!-- azia CSS -->
+    <link rel="stylesheet" href="/static/css/farmer.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+
+</head>
+<style>
+    .custom-container {
+        width: 110%;
+
+        background: rgba(0, 0, 0, 0.5);
+        padding: 28px;
+        margin: 0 28px;
+        border-radius: 10px;
+        box-shadow: inset -2px 2px 2px white;
+        background: linear-gradient(rgba(20, 20, 20, .5), rgba(20, 20, 20, .5)), url("/static/img/adminback.jpg");
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .custom-form-title {
+        font-size: 26px;
+        font-weight: 600;
+        text-align: center;
+        padding-bottom: 6px;
+        color: white;
+        text-shadow: 2px 2px 2px black;
+        border-bottom: solid 1px white;
+    }
+
+    .custom-content {
+        padding: 20px 0;
+    }
+
+    .custom-user-details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .custom-user-input-box {
+        display: flex;
+        flex-wrap: wrap;
+        width: 50%;
+        padding-bottom: 15px;
+    }
+
+    .custom-details {
+        width: 95%;
+        color: white;
+        font-size: 20px;
+        font-weight: 400;
+        margin: 5px 0;
+    }
+
+    .form-control {
+        height: 40px;
+        width: 95%;
+        border-radius: 7px;
+        outline: none;
+        border: 1px solid grey;
+        padding: 0 10px;
+    }
+
+    .custom-form-submit-btn {
+        margin-top: 40px;
+    }
+
+    .custom-form-submit-btn input {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+        font-size: 20px;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        color: rgb(209, 209, 209);
+        background: rgba(63, 114, 76, 0.7);
+    }
+
+    .custom-form-submit-btn input:hover {
+        background: rgba(56, 204, 93, 0.7);
+        color: rgb(255, 255, 255);
+    }
+
+    @media(max-width: 600px) {
+        .custom-container {
+            min-width: 280px;
+        }
+
+        .custom-user-input-box {
+            margin-bottom: 12px;
+            width: 100%;
+        }
+
+        .custom-user-input-box:nth-child(2n) {
+            justify-content: space-between;
+        }
+
+        .custom-main-user-info {
+            max-height: 380px;
+            overflow: auto;
+        }
+
+        .custom-main-user-info::-webkit-scrollbar {
+            width: 0;
+        }
+    }
+</style>
+
+<body>
+
+    <div class="az-header">
+        <div class="container">
+            <div class="az-header-left">
+                <a href="index.html" class="az-logo"><span></span> <img src="/static/img/logo2.png" alt="AgriCulture"
+                        height="40px"></a>
+                <a href="" id="azMenuShow" class="az-header-menu-icon d-lg-none"><span></span></a>
+            </div><!-- az-header-left -->
+            <div class="az-header-menu">
+                <div class="az-header-menu-header">
+                    <a href="index.html" class="az-logo"><span></span> HarvestHUB</a>
+                    <a href="" class="close">&times;</a>
+                </div><!-- az-header-menu-header -->
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="/farmerdashboard" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>
+                            Dashboard</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="/farmersellproduct" class="nav-link "><i class="typcn typcn-chart-bar-outline"></i>Sell
+                            Product</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a href="/farmerviewproduct" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i> View
+                            Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/farmercontact" class="nav-link"><i class="typcn typcn-chart-bar-outline"></i>Contact
+                            Us</a>
+                    </li>
+
+                </ul>
+            </div><!-- az-header-menu -->
+
+
+            <div class="dropdown az-header-notification">
+
+            </div><!-- az-header-notification -->
+            <div class="dropdown az-profile-menu">
+                <a href="/farmerprofile" class="az-img-user">
+                    <i class="bi bi-person-circle" style="font-size: 2rem; "></i>
+                </a>
+                <div class="dropdown-menu">
+
+                    <div class="az-header-profile">
+                        <div class="az-img-user">
+                            <img src="../img/faces/face1.jpg" alt="">
+                        </div><!-- az-img-user -->
+                    </div><!-- az-header-profile -->
+
+
+                </div><!-- az-header-right -->
+            </div><!-- container -->
+        </div><!-- az-header -->
+
+        <div class="az-content az-content-dashboard">
+            <div class="container">
+                <div class="az-content-body">
+                    <div class="az-dashboard-one-title">
+                        <div>
+                            <h2 class="az-dashboard-title">Hi, welcome {{ request.session.femail }}</h2>
+                            <p class="az-dashboard-text">Your HarvestHUB farmer analytics dashboard.</p>
+                        </div>
+
+                    </div><!-- az-dashboard-one-title -->
+
+
+
+
+
+                    <div class="custom-container">
+                        <div class="custom-content">
+                            <form method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="custom-user-details">
+                                    <div class="custom-user-input-box">
+                                        <span class="custom-details">Farmer Name</span>
+                                        <input type="text" class="form-control" name="fname"
+                                            value="{{fdata.first_name}} {{fdata.last_name}}"
+                                            placeholder="Enter Your Name" readonly />
+                                    </div>
+                                    <div class="custom-user-input-box">
+                                        <span class="custom-details">Email</span>
+                                        <input type="email" class="form-control" name="fmail" value="{{fdata.email}}"
+                                            placeholder="Enter Your Email" readonly />
+                                    </div>
+                                    <div class="custom-user-input-box">
+                                        <span class="custom-details">Contact No.</span>
+                                        <input type="tel" class="form-control" name="phn" value="{{fdata.phone}}"
+                                            placeholder="Enter Phone Number" readonly />
+                                    </div>
+                                    <div class="custom-user-input-box">
+                                        <span class="custom-details">Product Name</span>
+                                        <input type="text" class="form-control" name="proname"
+                                            placeholder="Enter Product Name" required />
+                                    </div>
+                                    <div class="custom-user-input-box">
+                                        <span class="custom-details">Product Description</span>
+                                        <input type="text" class="form-control" name="prodesc"
+                                            placeholder="Enter Description" required />
+                                    </div>
+                                    <div class="custom-user-input-box">
+                                        <span class="custom-details">Quantity</span>
+                                        <input type="text" class="form-control" name="quantity"
+                                            placeholder="Enter Quantity in KG" required />
+                                    </div>
+                                    <div class="custom-user-input-box">
+                                        <span class="custom-details">Price</span>
+                                        <input type="text" class="form-control" name="price"
+                                            placeholder="Enter Price per KG" required />
+                                    </div>
+
+
+                                    <input type="hidden" class="form-control" name="payment"  />
+
+
+                                    <input type="hidden" class="form-control" name="payment" value="Pending" />
+
+                                    <input type="text" id="order_id" name="order_id" hidden>
+
+                                    <input type="date" id="order_date" name="order_date" hidden>
+
+                                    <script>
+                                        const orderId = Math.floor(1000 + Math.random() * 9000);
+                                        document.getElementById('order_id').value = orderId;
+                                        const today = new Date();
+                                        const formattedDate = today.toISOString().split('T')[0];
+                                        document.getElementById('order_date').value = formattedDate;
+                                        
+                                    </script>
+
+                                    <div class="custom-user-input-box">
+                                        <span class="custom-details">Image of Product</span>
+                                        <input type="file" class="form-control" name="pimage" required />
+                                    </div>
+                                    <div class="custom-user-input-box">
+                                        <span class="custom-details">Certificate of Organic</span>
+                                        <input type="file" class="form-control" name="poimage" required />
+                                    </div>
+                                </div>
+                                <div class="custom-form-submit-btn">
+                                    <input type="submit" value="Add Product" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                </div><!-- az-content-body -->
+            </div>
+        </div><!-- az-content -->
+
+        <div class="az-footer ht-40">
+            <div class="container ht-100p pd-t-0-f">
+                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright ©
+                    HarvestHUB.com 2024</span>
+            </div><!-- container -->
+        </div><!-- az-footer -->
+
+
+        <script src="../lib/jquery/jquery.min.js"></script>
+        <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="../lib/ionicons/ionicons.js"></script>
+        <script src="../lib/jquery.flot/jquery.flot.js"></script>
+        <script src="../lib/jquery.flot/jquery.flot.resize.js"></script>
+        <script src="../lib/chart.js/Chart.bundle.min.js"></script>
+        <script src="../lib/peity/jquery.peity.min.js"></script>
+
+        <script src="../js/azia.js"></script>
+        <script src="../js/chart.flot.sampledata.js"></script>
+        <script src="../js/dashboard.sampledata.js"></script>
+        <script src="../js/jquery.cookie.js" type="text/javascript"></script>
+        <script>
+            $(function () {
+                'use strict'
+
+                var plot = $.plot('#flotChart', [{
+                    data: flotSampleData3,
+                    color: '#007bff',
+                    lines: {
+                        fillColor: { colors: [{ opacity: 0 }, { opacity: 0.2 }] }
+                    }
+                }, {
+                    data: flotSampleData4,
+                    color: '#560bd0',
+                    lines: {
+                        fillColor: { colors: [{ opacity: 0 }, { opacity: 0.2 }] }
+                    }
+                }], {
+                    series: {
+                        shadowSize: 0,
+                        lines: {
+                            show: true,
+                            lineWidth: 2,
+                            fill: true
+                        }
+                    },
+                    grid: {
+                        borderWidth: 0,
+                        labelMargin: 8
+                    },
+                    yaxis: {
+                        show: true,
+                        min: 0,
+                        max: 100,
+                        ticks: [[0, ''], [20, '20K'], [40, '40K'], [60, '60K'], [80, '80K']],
+                        tickColor: '#eee'
+                    },
+                    xaxis: {
+                        show: true,
+                        color: '#fff',
+                        ticks: [[25, 'OCT 21'], [75, 'OCT 22'], [100, 'OCT 23'], [125, 'OCT 24']],
+                    }
+                });
+
+                $.plot('#flotChart1', [{
+                    data: dashData2,
+                    color: '#00cccc'
+                }], {
+                    series: {
+                        shadowSize: 0,
+                        lines: {
+                            show: true,
+                            lineWidth: 2,
+                            fill: true,
+                            fillColor: { colors: [{ opacity: 0.2 }, { opacity: 0.2 }] }
+                        }
+                    },
+                    grid: {
+                        borderWidth: 0,
+                        labelMargin: 0
+                    },
+                    yaxis: {
+                        show: false,
+                        min: 0,
+                        max: 35
+                    },
+                    xaxis: {
+                        show: false,
+                        max: 50
+                    }
+                });
+
+                $.plot('#flotChart2', [{
+                    data: dashData2,
+                    color: '#007bff'
+                }], {
+                    series: {
+                        shadowSize: 0,
+                        bars: {
+                            show: true,
+                            lineWidth: 0,
+                            fill: 1,
+                            barWidth: .5
+                        }
+                    },
+                    grid: {
+                        borderWidth: 0,
+                        labelMargin: 0
+                    },
+                    yaxis: {
+                        show: false,
+                        min: 0,
+                        max: 35
+                    },
+                    xaxis: {
+                        show: false,
+                        max: 20
+                    }
+                });
+
+
+                //-------------------------------------------------------------//
+
+
+                // Line chart
+                $('.peity-line').peity('line');
+
+                // Bar charts
+                $('.peity-bar').peity('bar');
+
+                // Bar charts
+                $('.peity-donut').peity('donut');
+
+                var ctx5 = document.getElementById('chartBar5').getContext('2d');
+                new Chart(ctx5, {
+                    type: 'bar',
+                    data: {
+                        labels: [0, 1, 2, 3, 4, 5, 6, 7],
+                        datasets: [{
+                            data: [2, 4, 10, 20, 45, 40, 35, 18],
+                            backgroundColor: '#560bd0'
+                        }, {
+                            data: [3, 6, 15, 35, 50, 45, 35, 25],
+                            backgroundColor: '#cad0e8'
+                        }]
+                    },
+                    options: {
+                        maintainAspectRatio: false,
+                        tooltips: {
+                            enabled: false
+                        },
+                        legend: {
+                            display: false,
+                            labels: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            yAxes: [{
+                                display: false,
+                                ticks: {
+                                    beginAtZero: true,
+                                    fontSize: 11,
+                                    max: 80
+                                }
+                            }],
+                            xAxes: [{
+                                barPercentage: 0.6,
+                                gridLines: {
+                                    color: 'rgba(0,0,0,0.08)'
+                                },
+                                ticks: {
+                                    beginAtZero: true,
+                                    fontSize: 11,
+                                    display: false
+                                }
+                            }]
+                        }
+                    }
+                });
+
+                // Donut Chart
+                var datapie = {
+                    labels: ['Search', 'Email', 'Referral', 'Social', 'Other'],
+                    datasets: [{
+                        data: [25, 20, 30, 15, 10],
+                        backgroundColor: ['#6f42c1', '#007bff', '#17a2b8', '#00cccc', '#adb2bd']
+                    }]
+                };
+
+                var optionpie = {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    legend: {
+                        display: false,
+                    },
+                    animation: {
+                        animateScale: true,
+                        animateRotate: true
+                    }
+                };
+
+                // For a doughnut chart
+                var ctxpie = document.getElementById('chartDonut');
+                var myPieChart6 = new Chart(ctxpie, {
+                    type: 'doughnut',
+                    data: datapie,
+                    options: optionpie
+                });
+
+            });
+        </script>
+</body>
+
+</html>

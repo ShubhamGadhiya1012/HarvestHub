@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarvestHUB</title>
+    <link href="/static/img/logo.png" rel="icon">
+
+    <meta name="author" content="Codeconvey" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+      <!-- Favicons -->
+  <link href="/static/img/logo.png" rel="icon">
+  <link href="/static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Marcellus:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="/static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="/static/css/main.css" rel="stylesheet">
+
+
+
+
+</head>
+<style>
+    /* @import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900'); */
+
+
+
+    html {
+        box-sizing: border-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }
+
+    article,
+    header,
+    section,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    main,
+    nav,
+    section,
+    summary {
+        display: block;
+    }
+
+    body {
+        color: #222;
+        font-size: 100%;
+        line-height: 24px;
+        margin: 0;
+        padding: 0;
+        font-family: "Raleway", sans-serif;
+    }
+
+    a {
+        font-family: "Raleway", sans-serif;
+        text-decoration: none;
+        outline: none;
+    }
+
+    a:hover,
+    a:focus {
+        color: #373e18;
+    }
+
+    section {
+        float: left;
+        width: 100%;
+        padding-bottom: 3em;
+    }
+
+    h2 {
+        color: #1a0e0e;
+        font-size: 26px;
+        font-weight: 700;
+        margin: 0;
+        line-height: normal;
+        text-transform: uppercase;
+    }
+
+    h2 span {
+        display: block;
+        padding: 0;
+        font-size: 18px;
+        opacity: 0.7;
+        margin-top: 5px;
+        text-transform: uppercase;
+    }
+
+    #float-right {
+        float: right;
+    }
+
+
+    .ScriptTop {
+        background: #fff none repeat scroll 0 0;
+        float: left;
+        font-size: 0.69em;
+        font-weight: 600;
+        line-height: 2.2;
+        padding: 12px 0;
+        text-transform: uppercase;
+        width: 100%;
+    }
+
+    /* To Navigation Style 1*/
+    .ScriptTop ul {
+        margin: 24px 0;
+        padding: 0;
+        text-align: left;
+    }
+
+    .ScriptTop li {
+        list-style: none;
+        display: inline-block;
+    }
+
+    .ScriptTop li a {
+        background: #6a4aed none repeat scroll 0 0;
+        color: #fff;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 5px 18px;
+        text-decoration: none;
+        text-transform: capitalize;
+    }
+
+    .ScriptTop li a:hover {
+        background: #000;
+        color: #fff;
+    }
+
+
+
+
+    .ScriptHeader {
+        float: left;
+        width: 100%;
+        padding: 2em 0;
+    }
+
+    .rt-heading {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .Scriptcontent {
+        line-height: 28px;
+    }
+
+    .ScriptHeader h1 {
+        font-family: "brandon-grotesque", "Brandon Grotesque", "Source Sans Pro", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        color: #6a4aed;
+        font-size: 26px;
+        font-weight: 700;
+        margin: 0;
+        line-height: normal;
+
+    }
+
+    .ScriptHeader h2 {
+        color: #312c8f;
+        font-size: 20px;
+        font-weight: 400;
+        margin: 5px 0 0;
+        line-height: normal;
+
+    }
+
+    .ScriptHeader h1 span {
+        display: block;
+        padding: 0;
+        font-size: 22px;
+        opacity: 0.7;
+        margin-top: 5px;
+
+    }
+
+    .ScriptHeader span {
+        display: block;
+        padding: 0;
+        font-size: 22px;
+        opacity: 0.7;
+        margin-top: 5px;
+    }
+
+
+
+    .rt-container {
+        margin: 0 auto;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .rt-row:before,
+    .rt-row:after {
+        display: table;
+        line-height: 0;
+        content: "";
+    }
+
+    .rt-row:after {
+        clear: both;
+    }
+
+    [class^="col-rt-"] {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        padding: 0 15px;
+        min-height: 1px;
+        position: relative;
+    }
+
+
+    @media (min-width: 768px) {
+        .rt-container {
+            width: 750px;
+        }
+
+        [class^="col-rt-"] {
+            float: left;
+            width: 49.9999999999%;
+        }
+
+        .col-rt-6,
+        .col-rt-12 {
+            width: 100%;
+        }
+
+    }
+
+    @media (min-width: 1200px) {
+        .rt-container {
+            width: 1170px;
+        }
+
+        .col-rt-1 {
+            width: 16.6%;
+        }
+
+        .col-rt-2 {
+            width: 30.33%;
+        }
+
+        .col-rt-3 {
+            width: 50%;
+        }
+
+        .col-rt-4 {
+            width: 67.664%;
+        }
+
+        .col-rt-5 {
+            width: 83.33%;
+        }
+
+
+    }
+
+    @media only screen and (min-width:240px) and (max-width: 768px) {
+
+        .ScriptTop h1,
+        .ScriptTop ul {
+            text-align: center;
+        }
+
+        .ScriptTop h1 {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .ScriptTop ul {
+            margin-top: 12px;
+        }
+
+        .ScriptHeader h1,
+        .ScriptHeader h2,
+        .scriptnav ul {
+            text-align: center;
+        }
+
+        .scriptnav ul {
+            margin-top: 12px;
+        }
+
+        #float-right {
+            float: none;
+        }
+
+    }
+    .view-image-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.view-image-btn:hover {
+    background-color: #45a049; 
+}
+
+
+
+.status-icon {
+    border: none;
+    border-radius: 20px 10px;
+    padding: 1px 15px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    cursor: default; 
+    user-select: none; 
+    background-color: #4CAF50; 
+  }
+  
+  .success-icon {
+      background-color: green;
+  }
+  
+  .pending-icon {
+      background-color: orange;
+  }
+  
+  .fail-icon {
+      background-color: red;
+  }
+  
+  .paybtn{
+
+    background-color: rgb(0, 204, 255);
+    width: 60px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    
+  }
+  .invoice-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #a64747;  
+    color: white;              
+    padding: 8px 12px;
+    text-decoration: none;    
+    border-radius: 5px;        
+    font-size: 16px;          
+    font-weight: bold;         
+    transition: background-color 0.3s ease;
+}
+
+.invoice-btn i {
+    margin-right: 8px;          
+}
+
+.invoice-btn:hover {
+    background-color: #b07a7a;  
+    text-decoration: none;      
+}
+
+</style>
+
+<body>
+
+    <header id="header" class="header d-flex align-items-center position-relative">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+    
+          <a href="index.html" class="logo d-flex align-items-center">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <img src="/static/img/logo2.png" alt="AgriCulture" height="44px" >
+            <!-- <h1 class="sitename">AgriCulture</h1>  -->
+          </a>
+    
+          <nav id="navmenu" class="navmenu">
+            <ul>
+              <li><a href="{% url 'home' %}">Home</a></li>
+              <li><a href="{% url 'about' %}">About Us</a></li>
+              <li class="dropdown"><a href="{% url 'services' %} "><span>Our Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="{% url 'harvestcart' %}">Harvest cart</a></li>
+                  <li><a href="{% url 'harvestmandi' %}">Harvest Mandi</a></li>
+                  <li><a href="{% url 'harvestkirana' %}">Harvest Kirana</a></li>
+                  <li><a href="{% url 'harvestglobal' %}">Harvest Global</a></li>
+                </ul>
+              </li>
+            
+              <li><a href="{% url 'contact' %}" >Contact</a></li>
+              <li>
+                <a href="{% url 'login' %}">
+                    Logout <i class="bi bi-box-arrow-right" style="color: green;"></i>
+                </a>
+            </li>
+           
+              <li style="margin-left:auto;">
+                <a href="{% url 'userprofile' %}">
+                    <i class="bi bi-person-circle" style="font-size: 2.5rem; color: green;"></i>
+                </a>
+            </li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+          </nav>
+    
+    
+        </div>
+      </header>
+    
+
+    <div class="ScriptTop">
+        <div class="rt-container">
+            <div class="col-rt-4" id="float-right">
+
+              
+
+            </div>
+
+        </div>
+    </div>
+
+    
+    <section style="margin-top: -60px;">
+        <div class="rt-container">
+            <div class="col-rt-12">
+                <div class="Scriptcontent">
+
+                  
+                    <div class="student-profile py-4">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="card shadow-sm">
+                                        <div class="card-header bg-transparent text-center">
+                                           
+                                            <h3><b>{{user.name}}</b></h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="mb-0"><strong class="pr-1">Customer Name :</strong>{{user.name}}</p>
+                                            <p class="mb-0"><strong class="pr-1">Email:</strong>{{user.email}}
+                                            </p>
+
+                                            <p class="mb-0"><strong class="pr-1">Contact :</strong>{{user.phone_number}}</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="card shadow-sm">
+                                        <div class="card-header bg-transparent border-0">
+                                            <h3 class="mb-0"><i class="fa-solid fa-bag-shopping"></i> Order Information</h3>
+                                        </div>
+                                        <div class="card-body pt-0">
+                                            <table class="table table-bordered">
+                                                <tr>
+                                                    <th width="30%">Total Order</th>
+                                                    <td width="2%">:</td>
+                                                    <td>{{total_orders}}</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th width="30%">Total Amount of All order</th>
+                                                    <td width="2%">:</td>
+                                                    <td>{{total_amount}}</td>
+                                                </tr>
+
+
+                                               
+
+                                              
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <br>
+
+
+                                    
+                                </div>
+                            </div>
+
+                            <div class="card shadow-sm" style="width : auto;">
+                                <div class="card-header bg-transparent border-0">
+                                    <h3 class="mb-0"><i class="fa-solid fa-indian-rupee-sign"></i> History of Order</h3>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <table class="table table-bordered">
+                                        <tr>
+                                            <th>Order Id</th>
+                                            <th>Name</th>
+                                            <th>Product Name</th>
+                                            <th>Quantity (KG)</th>
+                                            <th>Price (per KG)</th>
+                                            <th>Total Amount</th>
+                                            <th>Invoice</th>
+
+                                        </tr>
+                                        {% for data in datas %}
+                                        <tr>
+                                            <th>{{data.id}}</th>
+                                            <th>{{data.uname}}</th>
+                                            <th>{{data.uemail}}</th>
+                                            <th>{{data.quantity}} </th>
+                                            <th>{{data.price}}</th>
+                                            <th>{{data.amount}}</th>
+                                            <th>
+                                                <a href="{% url 'download_invoice' data.id %}" class="invoice-btn">
+                                                    <i class="fas fa-file-pdf fa-2x"></i> Download 
+                                                </a>
+                                              </th>
+                                              
+
+                                        </tr>
+                                        {% endfor %}
+                                      
+                                      
+                                    </table>
+                                </div>
+                            </div>
+
+                          
+
+                        </div>
+
+                    </div>
+                
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+   
+
+</body>
+
+</html>
